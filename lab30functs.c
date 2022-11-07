@@ -1,5 +1,5 @@
 /** lab30functs.c
-* ===========================================================  
+* ===========================================================
 * Name: FIRST LAST, DATE
 * Section: SECTION
 * Project: Lab 30
@@ -16,10 +16,14 @@
  * ----------------------------------------------------------
  */
 int count_ears(int num_bunnies) {
-    
     // Base Case
-
+    if (num_bunnies == 0) {
+        return 0;
+    }
     // Recursive Case
+    else {
+        return 2 + count_ears(num_bunnies - 1);
+    }
     return 0;
 }
 
@@ -32,10 +36,15 @@ int count_ears(int num_bunnies) {
  * ----------------------------------------------------------
  */
 int num_buns_in_pyramid(int num_levels) {
-    
-    // Base Case
 
+    // Base Case
+    if (num_levels < 2) {
+        return num_levels;
+    }
     // Recursive Case
+    else {
+        return num_levels + num_buns_in_pyramid(num_levels - 1);
+    }
     return 0;
 }
 
@@ -48,9 +57,17 @@ int num_buns_in_pyramid(int num_levels) {
  * ----------------------------------------------------------
  */
 int count_ears2(int num_bunnies) {
-    
-    // Base Case
 
+    // Base Case
+    if (num_bunnies == 0) {
+        return 0;
+    }
     // Recursive Case
+    else if (num_bunnies % 2 == 1) {
+        return 2 + count_ears2(num_bunnies - 1);
+    }
+    else {
+        return 3 + count_ears2(num_bunnies - 1);
+    }
     return 0;
 }
